@@ -17,7 +17,7 @@ const Hero = () => {
             Hi, I'm <span className="text-primary">Anup</span>
           </h1>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold gradient-primary bg-clip-text text-transparent">
+          <h2>
             AI Engineer & Builder
           </h2>
           

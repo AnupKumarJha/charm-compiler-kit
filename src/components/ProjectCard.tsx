@@ -1,8 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface ProjectCardProps {
+  id: string;
   icon: string;
   title: string;
   description: string;
@@ -10,11 +12,18 @@ interface ProjectCardProps {
   delay?: number;
 }
 
-const ProjectCard = ({ icon, title, description, tags, delay = 0 }: ProjectCardProps) => {
+const ProjectCard = ({ id, icon, title, description, tags, delay = 0 }: ProjectCardProps) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/project/${id}`);
+  };
+
   return (
     <Card
-      className="group relative overflow-hidden border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-glow animate-fade-in-up"
+      className="group relative overflow-hidden border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-glow animate-fade-in-up cursor-pointer"
       style={{ animationDelay: `${delay}ms` }}
+      onClick={handleClick}
     >
       <div className="absolute inset-0 gradient-card opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
       
@@ -43,10 +52,10 @@ const ProjectCard = ({ icon, title, description, tags, delay = 0 }: ProjectCardP
           ))}
         </div>
         
-        <button className="flex items-center gap-2 text-primary hover:gap-3 transition-all duration-300 font-medium pt-2">
+        <div className="flex items-center gap-2 text-primary hover:gap-3 transition-all duration-300 font-medium pt-2">
           Learn More
           <ArrowRight className="h-4 w-4" />
-        </button>
+        </div>
       </div>
     </Card>
   );
