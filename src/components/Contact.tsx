@@ -32,7 +32,7 @@ const Contact = () => {
               className="border-border hover:border-primary hover:text-primary"
               asChild
             >
-              <a href="https://github.com/AnupKumarJha/charm-compiler-kit" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/AnupKumarJha" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-5 w-5" />
                 GitHub
               </a>
