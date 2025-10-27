@@ -30,10 +30,72 @@ export interface Project {
   cta: {
     primary: string;
     secondary: string;
+    primaryLink?: string;
+    secondaryLink?: string;
   };
 }
 
 export const projects: Project[] = [
+  {
+    id: "emotional-gpt",
+    icon: "💖",
+    title: "EmotionalGPT Wellness Companion",
+    description: "An AI-powered emotional wellness platform combining empathetic chat support, mood tracking, and actionable insights to help users build healthier emotional habits.",
+    tags: ["Emotional AI", "Wellness", "Sentiment Analysis"],
+    problem: "Employees and customers increasingly seek on-demand emotional support, but traditional wellness programs lack personalization and real-time guidance.",
+    solution: "A holistic emotional wellness companion that blends empathetic AI conversations, mood analytics, and positive habit reinforcement to deliver personalized support at scale.",
+    impact: [
+      { metric: "User Engagement", value: "4×", description: "Increase in daily emotional check-ins through gamified streaks" },
+      { metric: "Mood Awareness", value: "92%", description: "Of users report clearer understanding of emotional triggers" },
+      { metric: "Retention", value: "78%", description: "Monthly active users retained with tailored support journeys" }
+    ],
+    features: [
+      {
+        title: "Empathetic AI Companion",
+        description: "Context-aware conversations powered by advanced sentiment detection and Groq LLMs",
+        icon: "🧠"
+      },
+      {
+        title: "Mood Intelligence Hub",
+        description: "Interactive dashboards revealing patterns, triggers, and progress over time",
+        icon: "📊"
+      },
+      {
+        title: "Gamified Growth Paths",
+        description: "Achievement badges, streak tracking, and gentle nudges that encourage consistent wellness habits",
+        icon: "🎮"
+      },
+      {
+        title: "Privacy-First Architecture",
+        description: "Secure authentication, encrypted storage, and granular access controls built on Supabase",
+        icon: "🔐"
+      }
+    ],
+    techStack: [
+      {
+        category: "AI & Analytics",
+        technologies: ["Groq API", "Sentiment Analysis", "Recommendation Engine", "Emotion Classification"]
+      },
+      {
+        category: "Frontend Experience",
+        technologies: ["React", "TypeScript", "Tailwind CSS", "Chart.js"]
+      },
+      {
+        category: "Backend & Infrastructure",
+        technologies: ["FastAPI", "Supabase", "JWT Auth", "Vercel & Railway"]
+      }
+    ],
+    caseStudy: {
+      challenge: "A mental wellness startup needed a scalable way to provide personalized emotional support without expanding their human coaching team.",
+      approach: "Implemented EmotionalGPT to triage user sentiment, deliver empathetic conversations, and surface insights that human coaches can review asynchronously.",
+      results: "Reduced response times by 70%, increased daily engagement 4×, and gave coaches actionable context before every live session."
+    },
+    cta: {
+      primary: "Explore EmotionalGPT",
+      secondary: "Read Deployment Guide",
+      primaryLink: "https://emotional-gpt-chi.vercel.app/"
+    }
+  },
   {
     id: "customer-support-triage",
     icon: "🤖",

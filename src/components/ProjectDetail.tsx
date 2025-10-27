@@ -79,12 +79,35 @@ const ProjectDetail = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                {project.cta.primary}
-                <ExternalLink className="h-4 w-4 ml-2" />
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90"
+                asChild={Boolean(project.cta.primaryLink)}
+              >
+                {project.cta.primaryLink ? (
+                  <a href={project.cta.primaryLink} target="_blank" rel="noopener noreferrer">
+                    {project.cta.primary}
+                    <ExternalLink className="h-4 w-4 ml-2" />
+                  </a>
+                ) : (
+                  <>
+                    {project.cta.primary}
+                    <ExternalLink className="h-4 w-4 ml-2" />
+                  </>
+                )}
               </Button>
-              <Button size="lg" variant="outline">
-                {project.cta.secondary}
+              <Button
+                size="lg"
+                variant="outline"
+                asChild={Boolean(project.cta.secondaryLink)}
+              >
+                {project.cta.secondaryLink ? (
+                  <a href={project.cta.secondaryLink} target="_blank" rel="noopener noreferrer">
+                    {project.cta.secondary}
+                  </a>
+                ) : (
+                  project.cta.secondary
+                )}
               </Button>
             </div>
           </div>
@@ -290,12 +313,35 @@ const ProjectDetail = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                {project.cta.primary}
-                <ExternalLink className="h-4 w-4 ml-2" />
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90"
+                asChild={Boolean(project.cta.primaryLink)}
+              >
+                {project.cta.primaryLink ? (
+                  <a href={project.cta.primaryLink} target="_blank" rel="noopener noreferrer">
+                    {project.cta.primary}
+                    <ExternalLink className="h-4 w-4 ml-2" />
+                  </a>
+                ) : (
+                  <>
+                    {project.cta.primary}
+                    <ExternalLink className="h-4 w-4 ml-2" />
+                  </>
+                )}
               </Button>
-              <Button size="lg" variant="outline">
-                {project.cta.secondary}
+              <Button
+                size="lg"
+                variant="outline"
+                asChild={Boolean(project.cta.secondaryLink)}
+              >
+                {project.cta.secondaryLink ? (
+                  <a href={project.cta.secondaryLink} target="_blank" rel="noopener noreferrer">
+                    {project.cta.secondary}
+                  </a>
+                ) : (
+                  project.cta.secondary
+                )}
               </Button>
             </div>
           </div>
